@@ -12,9 +12,6 @@
                 <SidebarMenu />
             </el-scrollbar>
         </div>
-        <div>
-
-        </div>
         <!-- 顶部导航 -->
         <div class="layout_tabbar" :class="{ fold: isCollapse ? true : false }">
             <!-- layout组件的顶部导航tabbar -->
@@ -56,7 +53,6 @@ const logo = 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.pn
 .layout_container {
     width: 100%;
     height: 100vh;
-
     .layout_slider {
         color: white;
         width: 200px;
@@ -90,13 +86,16 @@ const logo = 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.pn
 
     .layout_main {
         position: absolute;
-        width: calc(100% - 200px);
-        height: calc(100vh - 50px);
+        width: calc(100% - 220px);
+        height: calc(100vh - 70px);
         left: 200px;
         top: 50px;
         padding: 20px;
         overflow: auto;
         transition: all 0.3s;
+        background-color: aliceblue;
+        margin: 10px;
+        box-sizing: border-box;
 
         &.fold {
             width: calc(100vw - 63.5px);

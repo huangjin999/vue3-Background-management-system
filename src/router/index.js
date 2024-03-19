@@ -98,6 +98,35 @@ export const constantRoutes = [
       },
     ],
   },
+  {
+    path: "/error",
+    // hidden: true,
+    component: Layout,
+    redirect: "/error/401",
+    meta: { title: "错误页 - error", icon: "Warning" },
+    children: [
+      {
+        path: "401",
+        component: () => import("@/views/error/401/index.vue"), 
+        name: "401",
+        meta: { title: "error - 401" },
+      },
+      {
+        path: "404",
+        component: () => import("@/views/error/404/index.vue"), 
+        name: "404",
+        meta: { title: "error - 404" },
+      },
+      
+    ],
+  },
+
+  // 放在最后，没有路由就访问404
+  {
+    path: "/:pathMatch(.*)",
+    redirect: "/result/404",
+    hidden: true,
+  }
 ];
 
 const router = createRouter({

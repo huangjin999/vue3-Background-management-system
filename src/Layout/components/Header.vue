@@ -21,19 +21,19 @@
       <div class="item">3</div>
       <div class="item">
         <el-dropdown>
-    <span class="el-dropdown-link">
-      账号信息
-      <el-icon class="el-icon--right">
-        <arrow-down />
-      </el-icon>
-    </span>
-    <template #dropdown>
-      <el-dropdown-menu>
-        <el-dropdown-item @click.native="handleUser">个人中心</el-dropdown-item>
-        <el-dropdown-item  @click.native="logout">退出登录</el-dropdown-item>
-      </el-dropdown-menu>
-    </template>
-  </el-dropdown>
+          <span class="el-dropdown-link">
+            账号信息
+            <el-icon class="el-icon--right">
+              <arrow-down />
+            </el-icon>
+          </span>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click.native="handleUser">个人中心</el-dropdown-item>
+              <el-dropdown-item @click.native="logout">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
       </div>
     </div>
   </div>
@@ -43,12 +43,12 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import router from '@/router'
-import { useCollapseStore } from '@/stores/isCollapse.js'; 
+import { useCollapseStore } from '@/stores/isCollapse.js';
 import { useAuthStore } from "@/stores/authStore";
 
 const route = useRoute();
 // 仓库状态
-const collapseStore = useCollapseStore(); 
+const collapseStore = useCollapseStore();
 // 使用是否则折叠的 仓库状态
 const isCollapse = computed(() => collapseStore.isCollapse);
 // icon折叠和展开
@@ -89,7 +89,7 @@ const logout = () => {
   align-items: center;
   padding: 10px 20px;
   // background-color: #f5f5f5;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .breadcrumbs {
     flex-grow: 1;
@@ -99,7 +99,7 @@ const logout = () => {
       font-size: 12px;
       color: #54a7f6;
     }
-    
+
   }
 
   .right {
@@ -118,12 +118,13 @@ const logout = () => {
       &:hover {
         background-color: #eee;
       }
+
       .example-showcase .el-dropdown-link {
-  cursor: pointer;
-  color: var(--el-color-primary);
-  display: flex;
-  align-items: center;
-}
+        cursor: pointer;
+        color: var(--el-color-primary);
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -134,7 +135,7 @@ const logout = () => {
     width: 30px;
     height: 30px;
     margin-right: 15px;
-    background-color: #e6e6e6;
+    // background-color: #e6e6e6;
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -149,7 +150,4 @@ const logout = () => {
     }
   }
 }
-
-
-
 </style>

@@ -19,9 +19,14 @@ import 'element-plus/dist/index.css'
 import '@/styles/index.scss'
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+//引入echarts
+import * as echarts from 'echarts'
+
 
 import './permission'
 const app = createApp(App)
+//全局挂载echarts
+app.config.globalProperties.$echarts = echarts
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
   }
